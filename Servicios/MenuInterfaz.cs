@@ -17,6 +17,10 @@ namespace CajeroMenuC.Servicios
         /// </summary>
         void mostrarMensajeBienvenida();
 
+        /// <summary>
+        /// Metodo que muestra el menu
+        /// </summary>
+        /// <returns></returns>
         public int mostrarMenuYSeleccion();
     }
 
