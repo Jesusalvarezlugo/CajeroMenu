@@ -22,6 +22,8 @@ namespace CajeroMenuC.Servicios
         /// </summary>
         /// <returns></returns>
         public int mostrarMenuYSeleccion();
+
+        public string NuevoAltaCliente();
     }
 
     

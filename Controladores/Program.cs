@@ -1,77 +1,74 @@
-﻿using CajeroMenuC.Servicios;
+﻿using CajeroMenuC.Dtos;
+using CajeroMenuC.Servicios;
 
 namespace CajeroMenuC.Controladores
 {
-    /// <summary>
-    /// Clase principal de la aplicación
-    /// 250923 - jal
-    /// </summary>
     class Program
     {
-        /// <summary>
-        /// Método de entrada de la aplicación
-        /// 250923 - jal
-        /// </summary>
-        /// <param name="args"></param>
-
         static void Main(string[] args)
         {
-
+            List<ClienteDto> listaClientes = new List<ClienteDto>();
+            List<CuentaBancariaDto> listaCuentaBanc=new List<CuentaBancariaDto>();
+            ClienteDto cliente1 = new ClienteDto();
             MenuInterfaz mi = new MenuImplementacion();
+            operativaInterfaz oi = new operativaImplementacion();
+            string respuesta = "";
 
-            mi.mostrarMensajeBienvenida();
-
-            //variable que controla la entrada y salida del bucle while
+            int opcionS;
             bool cerrarMenu = false;
 
-            //contener la opcion del usuario
-            int opcionSeleccionada;
-
-
-            //desde la primera iteracion debe cumplirse la condicion
-            while (!cerrarMenu)
+            while (!cerrarMenu || respuesta == "s")
             {
+                mi.mostrarMensajeBienvenida();
 
-                opcionSeleccionada = mi.mostrarMenuYSeleccion();
+                opcionS = mi.mostrarMenuYSeleccion();
 
-                switch (opcionSeleccionada)
+
+
+                switch (opcionS)
                 {
                     case 0:
-                        Console.WriteLine("[INFO]- se ejecuta caso 0");
                         cerrarMenu = true;
                         break;
 
                     case 1:
-                        Console.WriteLine("[INFO]- se ejecuta caso 1");
+
+                        Console.WriteLine("[INFO] Alta Cliente");
+                        do
+                        {
+                            oi.DarAltaCliente(listaClientes);
+                            for (int posicion = 0; posicion < listaClientes.Count; posicion++)
+                            {
+                                Console.WriteLine(listaClientes[posicion].ToString());
+                            }
+                            respuesta = mi.NuevoAltaCliente();
+
+                        } while (respuesta == "s");
+
                         break;
 
                     case 2:
-                        Console.WriteLine("[INFO]- se ejecuta caso 2");
-                        break;
+                        Console.WriteLine("[INFO] Alta Cuenta Bancaria");
 
-                    case 3:
-                        Console.WriteLine("[INFO]- se ejecuta caso 3");
-                        break;
+                        oi.darAltaCuenta(listaCuentaBanc);
 
-                    case 4:
-                        Console.WriteLine("[INFO]- se ejecuta caso 4");
-                        break;
+                        for(int posicion=0;posicion < listaCuentaBanc.Count; posicion++)
+                        {
+                            Console.WriteLine(listaCuentaBanc[posicion].ToString());
+                        }
+                        
 
-                    case 5:
-                        Console.WriteLine("[INFO]- se ejecuta caso 5");
-                        break;
-
-                    default:
-
-                        Console.WriteLine("[INFO] - La opcion seleccionada no esta disponible");
+                        
                         break;
                 }
+
+
 
             }
 
 
 
         }
-    } 
+    }
 }
-            
+

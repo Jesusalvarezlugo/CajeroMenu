@@ -25,9 +25,9 @@ namespace CajeroMenuC.Servicios
             Console.WriteLine("#########################");
             Console.WriteLine("0. Cerrar aplicacion");
             Console.WriteLine("1. Darse de alta");
-            Console.WriteLine("2. Ingresar dinero");
+            Console.WriteLine("2. Crear Cuenta Bancaria");
             Console.WriteLine("3. Sacar dinero");
-            Console.WriteLine("Transferir dineo");
+            Console.WriteLine("4. Transferir dinero");
             Console.WriteLine("5. Historial operaciones");
             Console.WriteLine("############################");
             Console.WriteLine("Seleccione una opcion:");
@@ -37,6 +37,16 @@ namespace CajeroMenuC.Servicios
             return opcionIntroducida;
 
 
+        }
+
+        public string NuevoAltaCliente()
+        {
+            string respuesta;
+
+            Console.WriteLine("Desea hacer un nuevo alta de cliente(s/n)");
+            respuesta = Console.ReadLine();
+
+            return respuesta;
         }
     }
 }
