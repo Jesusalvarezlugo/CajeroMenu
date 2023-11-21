@@ -23,6 +23,11 @@ namespace CajeroMenuC.Servicios
             listaAntigua.Add(nuevaCuenta);
         }
 
+
+         /// <summary>
+         /// Método que crea la nueva cuenta
+         /// </summary>
+         /// <returns></returns>
         private CuentaBancariaDto cuentaNueva()
         {
             CuentaBancariaDto nuevaCuenta= new CuentaBancariaDto();
@@ -36,9 +41,6 @@ namespace CajeroMenuC.Servicios
             Console.WriteLine("Introduzca la fecha de alta: ");
             nuevaCuenta.FchAltaCuenta = Console.ReadLine();
 
-            Console.WriteLine("Introduzca la fecha de baja: ");
-            nuevaCuenta.FchBajaCuenta = Console.ReadLine();
-
             Console.WriteLine("Introduzca el id del cliente: ");
             nuevaCuenta.CuentaCliente = Convert.ToInt32(Console.ReadLine());
 
@@ -46,6 +48,11 @@ namespace CajeroMenuC.Servicios
 
         }
 
+
+        /// <summary>
+        /// Método que crea el nuevo cliente
+        /// </summary>
+        /// <returns></returns>
         private ClienteDto ClienteNuevo()
         {
             

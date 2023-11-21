@@ -1,10 +1,25 @@
 ﻿using CajeroMenuC.Dtos;
 using CajeroMenuC.Servicios;
+using System.Xml.Linq;
+using System;
 
 namespace CajeroMenuC.Controladores
+     
+          ///<summary>
+         ///Clase que controla el flujo de la aplicacion
+        ///jal-21/11/2023
+       /// </summary>
 {
     class Program
     {
+
+        /// <summary>
+        /// Método principal de nuestra aplicación
+	    /// Define el procedimiento, es de donde toda acción salen
+	    /// y a donde toda acción llega cuando acaba.
+        /// jal-21/11/2023
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             List<ClienteDto> listaClientes = new List<ClienteDto>();
@@ -12,12 +27,12 @@ namespace CajeroMenuC.Controladores
             ClienteDto cliente1 = new ClienteDto();
             MenuInterfaz mi = new MenuImplementacion();
             operativaInterfaz oi = new operativaImplementacion();
-            string respuesta = "";
+            
 
             int opcionS;
             bool cerrarMenu = false;
 
-            while (!cerrarMenu || respuesta == "s")
+            while (!cerrarMenu)
             {
                 mi.mostrarMensajeBienvenida();
 
@@ -34,20 +49,21 @@ namespace CajeroMenuC.Controladores
                     case 1:
 
                         Console.WriteLine("[INFO] Alta Cliente");
-                        do
-                        {
+                        
+                        
                             oi.DarAltaCliente(listaClientes);
                             for (int posicion = 0; posicion < listaClientes.Count; posicion++)
                             {
                                 Console.WriteLine(listaClientes[posicion].ToString());
                             }
-                            respuesta = mi.NuevoAltaCliente();
+                            
 
-                        } while (respuesta == "s");
+
 
                         break;
 
                     case 2:
+
                         Console.WriteLine("[INFO] Alta Cuenta Bancaria");
 
                         oi.darAltaCuenta(listaCuentaBanc);

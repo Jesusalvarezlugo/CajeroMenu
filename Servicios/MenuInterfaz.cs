@@ -8,22 +8,24 @@ namespace CajeroMenuC.Servicios
 {
     /// <summary>
     /// Interfaz con la relación de métodos de la funcionalidad menú
-    /// 250923 - jal
+    /// 21/11/2023
     /// </summary>
     internal interface MenuInterfaz
     {
         /// <summary>
         /// Método que muestra mensaje de bienvenida al cajero.
+        /// 21/11/2023
         /// </summary>
         void mostrarMensajeBienvenida();
 
         /// <summary>
         /// Metodo que muestra el menu
+        /// 21/11/2023
         /// </summary>
-        /// <returns></returns>
+        /// <returns>opcionSeleccionada</returns>
         public int mostrarMenuYSeleccion();
 
-        public string NuevoAltaCliente();
+        
     }
 
     

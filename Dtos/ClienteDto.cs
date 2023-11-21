@@ -4,6 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/// <summary>
+/// Clase  Entidad cliente
+/// jal-21/11/2023 
+/// </summary>
+
 namespace CajeroMenuC.Dtos
 {
     internal class ClienteDto
@@ -57,12 +62,15 @@ namespace CajeroMenuC.Dtos
         override
         public string ToString()
         {
-            string clienteString = "ID:  \n" + this.idCliente +
+            string clienteString = "ID:  " + this.idCliente +
                 "Nombre: " + this.nombreCliente +
-                " Apellidos: " + this.apellidosCliente + "\n" +
+                " \nApellidos: " + this.apellidosCliente + "\n" +
                 " DNI: " + this.dniCliente +
                 "\n Email: " + this.emailCliente +
-                " Telefono: " + this.tlfCliente;
+                "\nTelefono: " + this.tlfCliente +
+                "\n Fecha de alta: " + fchAltaCliente +
+                "\n Fecha de baja: " + fchBajaCliente;
+                
 
             return clienteString;
         }

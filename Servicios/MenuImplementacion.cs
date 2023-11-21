@@ -8,7 +8,7 @@ namespace CajeroMenuC.Servicios
 {
     /// <summary>
     /// Clase que implementa la interfaz de menú
-    /// 250923 - jal
+    /// 21/11/2023 - jal
     /// </summary>
     internal class MenuImplementacion : MenuInterfaz
     {
@@ -39,14 +39,6 @@ namespace CajeroMenuC.Servicios
 
         }
 
-        public string NuevoAltaCliente()
-        {
-            string respuesta;
-
-            Console.WriteLine("Desea hacer un nuevo alta de cliente(s/n)");
-            respuesta = Console.ReadLine();
-
-            return respuesta;
-        }
+        
     }
 }
