@@ -7,7 +7,7 @@ namespace CajeroMenuC.Controladores
      
           ///<summary>
          ///Clase que controla el flujo de la aplicacion
-        ///jal-21/11/2023
+        /// jal-21/11/2023
        /// </summary>
 {
     class Program
@@ -23,8 +23,7 @@ namespace CajeroMenuC.Controladores
         static void Main(string[] args)
         {
             List<ClienteDto> listaClientes = new List<ClienteDto>();
-            List<CuentaBancariaDto> listaCuentaBanc=new List<CuentaBancariaDto>();
-            ClienteDto cliente1 = new ClienteDto();
+            List<CuentaBancariaDto> listaCuentaBanc=new List<CuentaBancariaDto>();           
             MenuInterfaz mi = new MenuImplementacion();
             operativaInterfaz oi = new operativaImplementacion();
             
@@ -52,15 +51,18 @@ namespace CajeroMenuC.Controladores
                         
                         
                             oi.DarAltaCliente(listaClientes);
-                            for (int posicion = 0; posicion < listaClientes.Count; posicion++)
+                            //Con bucle FOR
+                            /*for (int posicion = 0; posicion < listaClientes.Count; posicion++)
                             {
                                 Console.WriteLine(listaClientes[posicion].ToString());
-                            }
-                            
+                            }*/
 
-
-
-                        break;
+                            foreach (ClienteDto cliente  in listaClientes)
+                            {
+                                Console.WriteLine(cliente.ToString());
+                            }                       
+                                                                                                                     
+                       break;
 
                     case 2:
 

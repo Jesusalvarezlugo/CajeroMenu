@@ -7,6 +7,11 @@ using System.Threading.Tasks;
 
 namespace CajeroMenuC.Dtos
 {
+
+    /// <summary>
+    /// Entidad cuenta bancaria, representa el ente cuenta bancaria del banco
+    /// </summary>
+    /// <author>jal-27/11/2023</author>
     internal class CuentaBancariaDto
     {
         /*
@@ -20,7 +25,7 @@ namespace CajeroMenuC.Dtos
 
         //Atributos
         long idCuenta;
-        string isban;
+        string isban= "aaaaa";
         string codswitch = "CSI1SSXX";
         string fchAltaCuenta= "9999/12/31";
         string fchBajaCuenta= "9999/12/31";
@@ -43,13 +48,11 @@ namespace CajeroMenuC.Dtos
         {
 
         }
-        public CuentaBancariaDto(long id, string isban, string codswitch, string fchAltaCuenta, string fchBajaCuenta, long cuentaCliente)
+        public CuentaBancariaDto(long id, string isban, string fchAltaCuenta,  long cuentaCliente)
         {
             this.idCuenta = idCuenta;
-            this.isban = isban;
-            this.codswitch = codswitch;
-            this.fchAltaCuenta = fchAltaCuenta;
-            this.fchBajaCuenta = fchBajaCuenta;
+            this.isban = isban;           
+            this.fchAltaCuenta = fchAltaCuenta;           
             this.cuentaCliente = cuentaCliente;
         }
 
