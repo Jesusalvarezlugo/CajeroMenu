@@ -78,6 +78,14 @@ namespace CajeroMenuC.Controladores
 
                         
                         break;
+
+
+                    case 4:
+                        Console.WriteLine("[INFO] ELIMINAR UN CLIENTE");
+
+                        oi.borrarCliente(listaClientes);
+
+                        break;
                 }
 
 

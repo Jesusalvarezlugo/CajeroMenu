@@ -87,6 +87,49 @@ namespace CajeroMenuC.Servicios
 
         }
 
+        public void borrarCliente(List<ClienteDto> listaAntigua)
+        {
+            MenuInterfaz mi = new MenuImplementacion();
+            string dniBuscar;
 
+            dniBuscar = mi.pedirDni();
+
+            //Objeto especifico:se elimina por referencia de memoria
+            ClienteDto clienteABorrar = new ClienteDto();
+
+            foreach (ClienteDto cliente in listaAntigua)
+            {
+                if (cliente.DniCliente.Equals(dniBuscar))
+                {
+                    clienteABorrar = cliente;
+                    break;
+                }
+            }
+            listaAntigua.Remove(clienteABorrar);
+            
+            //Posicion
+            /*int posicion;
+            bool aBorrar = false;
+            for(posicion = 0; posicion < listaAntigua.Count; posicion++)
+            {
+                if (listaAntigua[posicion].DniCliente.Equals(dniBuscar))
+                {
+                    aBorrar = true;
+                    break;
+                }
+            }
+            if (aBorrar)
+            {
+                listaAntigua.RemoveAt(posicion);
+            }
+
+            else
+            {
+                Console.WriteLine("El cliente no existe");
+            }
+
+            listaAntigua.RemoveAt(posicion);*/
+
+        }
     }
 }

@@ -25,6 +25,13 @@ namespace CajeroMenuC.Servicios
         /// <returns>opcionSeleccionada</returns>
         public int mostrarMenuYSeleccion();
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public string pedirDni();
+
         
     }
 

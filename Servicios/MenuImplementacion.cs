@@ -39,6 +39,14 @@ namespace CajeroMenuC.Servicios
 
         }
 
-        
+        public string pedirDni()
+        {
+            string dni;
+
+            Console.WriteLine("Indica el DNI del cliente");
+            dni = Console.ReadLine();
+
+            return dni;
+        }
     }
 }
