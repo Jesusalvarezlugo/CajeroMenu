@@ -63,7 +63,7 @@ namespace CajeroMenuC.Dtos
         public string ToString()
         {
             string clienteString = "ID:  " + this.idCliente +
-                "Nombre: " + this.nombreCliente +
+                "\nNombre: " + this.nombreCliente +
                 " \nApellidos: " + this.apellidosCliente + "\n" +
                 " DNI: " + this.dniCliente +
                 "\n Email: " + this.emailCliente +
