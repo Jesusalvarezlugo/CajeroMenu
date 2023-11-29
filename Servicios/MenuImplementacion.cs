@@ -26,8 +26,8 @@ namespace CajeroMenuC.Servicios
             Console.WriteLine("0. Cerrar aplicacion");
             Console.WriteLine("1. Darse de alta");
             Console.WriteLine("2. Crear Cuenta Bancaria");
-            Console.WriteLine("3. Sacar dinero");
-            Console.WriteLine("4. Transferir dinero");
+            Console.WriteLine("3. Modificar cliente");
+            Console.WriteLine("4. eliminar cliente");
             Console.WriteLine("5. Historial operaciones");
             Console.WriteLine("############################");
             Console.WriteLine("Seleccione una opcion:");
@@ -47,6 +47,22 @@ namespace CajeroMenuC.Servicios
             dni = Console.ReadLine();
 
             return dni;
+        }
+
+        public int menuCampos()
+        {
+            int opcion;
+            Console.WriteLine("Elija el campo a modificar");
+            Console.WriteLine("1.Nombre");
+            Console.WriteLine("2.Apellidos");
+            Console.WriteLine("3.DNI");
+            Console.WriteLine("4.Fecha de nacimiento");
+            Console.WriteLine("5.Email");
+            Console.WriteLine("6.Telefono");           
+            Console.WriteLine("0.salir");
+            opcion = Console.ReadKey(true).KeyChar - ('0');
+            
+            return opcion;
         }
     }
 }

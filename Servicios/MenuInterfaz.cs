@@ -32,6 +32,8 @@ namespace CajeroMenuC.Servicios
         /// <returns></returns>
         public string pedirDni();
 
+        public int menuCampos();
+
         
     }
 

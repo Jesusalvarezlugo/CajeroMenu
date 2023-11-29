@@ -69,6 +69,9 @@ namespace CajeroMenuC.Servicios
             Console.WriteLine("Introduzca los apellidos: ");
             nuevoCliente.ApellidosCliente = Console.ReadLine();
 
+            Console.WriteLine("Introduzca el dni: ");
+            nuevoCliente.DniCliente = Console.ReadLine();
+
             Console.WriteLine("Introduzca la fecha de nacimiento: ");
             nuevoCliente.FechaNacimientoCliente = Console.ReadLine();
 
@@ -130,6 +133,94 @@ namespace CajeroMenuC.Servicios
 
             listaAntigua.RemoveAt(posicion);*/
 
+        }
+
+        public void modificarCliente(List<ClienteDto> listaAntigua)
+        {
+            MenuInterfaz mi=new MenuImplementacion();
+            string dniBuscar=mi.pedirDni();
+            int opcion;
+            bool cerrarMenu = false;
+
+            ClienteDto clienteAModificar= new ClienteDto();
+
+            foreach(ClienteDto cliente in listaAntigua)
+            {
+                if (cliente.DniCliente.Equals(dniBuscar))
+                {
+                    while (!cerrarMenu)
+                    {
+                        opcion = mi.menuCampos();
+
+                        switch(opcion)
+                        {
+                            case 0:
+                                Console.WriteLine("-----[INFO] se cerrara el menu------");
+                                cerrarMenu = true;
+                                break;
+
+                            case 1:
+                                Console.WriteLine("-----[INFO] Se modificara el nombre-----");
+                                string nombreM;
+                                Console.WriteLine("introduce el nombre para modificar");
+                                nombreM = Console.ReadLine();
+
+                                cliente.NombreCliente = nombreM;
+                                break;
+
+                            case 2:
+                                Console.WriteLine("-----[INFO] Se modificara el apellido-----");
+                                string apellidoM;
+                                Console.WriteLine("Introduce el apellido a modificar");
+                                apellidoM = Console.ReadLine();
+
+                                cliente.ApellidosCliente = apellidoM;
+                                break;
+
+                            case 3:
+                                Console.WriteLine("-----[INFO] Se modificara el dni-----");
+                                string dniM;
+                                Console.WriteLine("introduce el dni a modificar");
+                                dniM= Console.ReadLine();
+
+                                cliente.DniCliente = dniM;
+                                break;
+
+                            case 4:
+                                Console.WriteLine("-----[INFO] Se modificara la fecha de nacimiento-----");
+                                string fchNacM;
+                                Console.WriteLine("introduce la fecha  a modificar");
+                                fchNacM = Console.ReadLine();
+
+                                cliente.FechaNacimientoCliente = fchNacM;
+                                break;
+
+                            case 5:
+                                Console.WriteLine("-----[INFO] Se modificara el email-----");
+                                string emailM;
+                                Console.WriteLine("introduce el email  a modificar");
+                                emailM = Console.ReadLine();
+
+                                cliente.EmailCliente = emailM;
+                                break;
+
+                            case 6:
+                                Console.WriteLine("-----[INFO] Se modificara el telefono-----");
+                                int telefonoM;
+                                Console.WriteLine("introduce la fecha  a modificar");
+                                telefonoM =Int32.Parse(Console.ReadLine());
+
+                                cliente.TlfCliente = telefonoM;
+                                break;
+
+                                clienteAModificar = cliente;
+                        }
+                    }
+                    
+
+                    
+                }
+            }
         }
     }
 }

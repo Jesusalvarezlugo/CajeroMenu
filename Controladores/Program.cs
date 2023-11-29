@@ -80,11 +80,39 @@ namespace CajeroMenuC.Controladores
                         break;
 
 
+                    case 3:
+                        Console.WriteLine("[INFO] Modificar cliente");
+
+                        oi.modificarCliente(listaClientes);
+                        /*
+                         foreach()
+                        {
+                            if(clienteDni.Equals(dni))
+                            {
+                                hacer menu con los campos a cambiar.
+                                hacer un switch con los campos y dentro de los casos pedir el valor a cambiar.
+                                modifical el valor.
+                            }
+                        }
+                        */
+                        break;
+
+
                     case 4:
                         Console.WriteLine("[INFO] ELIMINAR UN CLIENTE");
 
                         oi.borrarCliente(listaClientes);
 
+                        break;
+
+
+                    case 5:
+                        Console.WriteLine("[INFO] se mostraran los clientes");
+
+                        foreach(ClienteDto cliente in listaClientes)
+                        {
+                            Console.WriteLine(cliente.ToString());
+                        }
                         break;
                 }
 

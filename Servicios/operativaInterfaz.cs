@@ -27,6 +27,8 @@ namespace CajeroMenuC.Servicios
         /// <param name="listaAntigua"></param>
         public void borrarCliente(List<ClienteDto> listaAntigua);
 
+        public void modificarCliente(List<ClienteDto> listaAntigua);
+
     }
 }
 
